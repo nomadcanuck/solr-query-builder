@@ -1,0 +1,19 @@
+212  idbrand - brand (prace.cz, jobs.cz...)
+1000 lang, id_language_knowledge - jazyk
+2005 idcompanytype - typ firmy (místní, zahranièní...)
+2006 idcompanyownership - typ vlastnictví firmy (soukromá, státní...)
+2009 idposfield - obor 
+2007 idcompanyfield - obor èinnosti firmy (administrativa, IT...)
+2011 idprofession - profese
+2013 idemploymenttype - typ úvazku (plný, zkrácený...)
+2015 id_lang_knowledge_*  - úroveò znalosti jazyka (základní, pokroèilá, rodilý mluvèí...)
+2019 idzps - vhodnost/dostupnost pro postižené (možná práce z domova, práce v kanceláøi s bezbariérovým pøístupem...)
+2027 idemptimespec - délka úvazku (na dobu urèitou, neurèitou...)
+2028 idbenefit - benefity
+2029 idcompanyagent, idjdagent - typ zadavatele inzerátu (firma, personální agentura, úøad práce...)
+2030 idworkstatus - vhodnost pro urèité skupiny uchazeèù (èerství absolventi, dùchodci, ženy na mateøské...)
+2034 idschooldegree - nejvyšší dosažené vzdìlání 
+2100 idzpsdetail - vhodnost pro postižené - typ postižení (neslyšící, nevidomí...)
+2124 idemployeecateg - typ práce (manuální, administrativní, odborná...) 
+2127 idcontracttype - typ smluvního vztahu (práce na smlouvu, OSVÈ...)
+  
