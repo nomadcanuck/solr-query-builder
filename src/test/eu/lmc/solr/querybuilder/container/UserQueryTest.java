@@ -1,7 +1,6 @@
-package java.container;
+package eu.lmc.solr.querybuilder.container;
 
 import eu.lmc.solr.querybuilder.component.ComponentCache;
-import eu.lmc.solr.querybuilder.structure.UserQuery;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -10,6 +9,9 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 import javax.swing.*;
 import java.awt.*;
 
+import static org.junit.Assert.assertEquals;
+
+
 /**
  * Created by avecherskaya on 07/05/15.
  */
@@ -17,7 +19,7 @@ public class UserQueryTest {
 
     ComponentCache componentCache;
     UserQuery userQuery;
-    container.FilterContainer filterContainer;
+    eu.lmc.solr.querybuilder.container.FilterContainer filterContainer;
 
     JList list;
     DefaultListModel model;
@@ -27,8 +29,7 @@ public class UserQueryTest {
         ApplicationContext applicationContext = new FileSystemXmlApplicationContext("mvc/web/WEB-INF/test-config.xml");
         componentCache = (ComponentCache) applicationContext.getBean("componentCache");
         userQuery = (UserQuery) applicationContext.getBean("userQuery");
-        filterContainer = (container.FilterContainer) applicationContext.getBean("filterContainer");
-
+        filterContainer = (FilterContainer) applicationContext.getBean("filterContainer");
     }
 
 
@@ -40,7 +41,7 @@ public class UserQueryTest {
     public void testGetContainers() throws Exception {
 
         model = new DefaultListModel();
-        for (container.Container c : userQuery.getContainers()){
+        for (Container c : userQuery.getContainers()){
             model.addElement(c);
         }
 

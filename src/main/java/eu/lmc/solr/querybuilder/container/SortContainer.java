@@ -6,12 +6,13 @@ import eu.lmc.solr.querybuilder.component.FieldNameComponent;
 import org.apache.solr.client.solrj.SolrQuery;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 /**
  * Created by avecherskaya on 30/04/15.
  */
 public class SortContainer extends Container {
-    private HashSet<FieldNameComponent> components;
+    private LinkedHashSet<FieldNameComponent> components;
 
     @Override
     public void processQuery(SolrQuery sq) {
@@ -33,7 +34,7 @@ public class SortContainer extends Container {
     }
 
 
-    public void setComponents(HashSet<FieldNameComponent> components) {
+    public void setComponents(LinkedHashSet<FieldNameComponent> components) {
         this.components = components;
     }
 
