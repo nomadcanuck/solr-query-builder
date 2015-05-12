@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ ">
+       <bean id="userQuery" class="container.UserQuery">
+              <property name="containers">
+                     <util:list list-class="java.util.ArrayList" value-type="container.Container" scope="singleton">
+                            <ref bean="filterContainer"></ref>
+                            <ref bean="queryContainer"></ref>
+
+                     </util:list>
+              </property>
+       </bean>
+
+       <bean id="filterContainer" class="container.FilterContainer">
+              <property name="components">
+                     <util:set set-class="java.util.HashSet" value-type="component.Component" scope="singleton" >
+                     </util:set>
+              </property>
+       </bean>
+
+    <bean id="queryContainer" class="container.QueryContainer">
+        <property name="components">
+            <util:set set-class="java.util.HashSet" value-type="component.Component" scope="singleton" >
+            </util:set>
+        </property>
+    </bean>
+
+</beans>
