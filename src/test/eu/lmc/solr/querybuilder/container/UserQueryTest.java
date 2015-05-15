@@ -1,5 +1,6 @@
 package eu.lmc.solr.querybuilder.container;
 
+import eu.lmc.solr.querybuilder.component.Component;
 import eu.lmc.solr.querybuilder.component.ComponentCache;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import javax.swing.*;
-import java.awt.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -23,6 +23,7 @@ public class UserQueryTest {
 
     JList list;
     DefaultListModel model;
+    DefaultListModel model2;
 
     @Before
     public void setUp(){
@@ -41,10 +42,18 @@ public class UserQueryTest {
     public void testGetContainers() throws Exception {
 
         model = new DefaultListModel();
+        model = new DefaultListModel();
+
         for (Container c : userQuery.getContainers()){
             model.addElement(c);
         }
 
+        for (Component c : componentCache.getCache()) {
+            model2.addElement(c);
+        }
+
+
+        /*
         list = new JList(model);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setLayoutOrientation(JList.VERTICAL);
@@ -52,8 +61,10 @@ public class UserQueryTest {
 
         JScrollPane listScroller = new JScrollPane(list);
         listScroller.setPreferredSize(new Dimension(250, 80));
-
+        */
+        assertEquals(model2.firstElement(), componentCache.getComponent(0));
         assertEquals(model.get(0),filterContainer);
 
     }
+
 }

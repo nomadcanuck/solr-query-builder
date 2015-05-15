@@ -14,6 +14,7 @@ public class BoostQuery extends Container {
 
     @Override
     public void processQuery(SolrQuery sq) {
+        sq.setParam("deftype", "edismax");
 
     }
 

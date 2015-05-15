@@ -1,11 +1,20 @@
 package eu.lmc.solr.querybuilder.component;
 
+import eu.lmc.solr.querybuilder.component.boost_component.BoostComponent;
+
+import java.util.LinkedHashSet;
+
 /**
  * Created by avecherskaya on 18/04/15.
  */
 public class FulltextComponent extends Component {
     private String text = "";
     private int id;
+    private LinkedHashSet<BoostComponent> boostComponents;
+
+    public void addBoostComponent(BoostComponent component){
+        boostComponents.add(component);
+    }
 
     @Override
     public ComponentType getType(){
@@ -14,8 +23,17 @@ public class FulltextComponent extends Component {
 
     @Override
     public String getQueryString(){
-        //return "q:"+text;
-        return text;
+        String s = "";
+        if (this.boostComponents!=null){
+            s+="{!type=edismax ";
+            for (BoostComponent c : boostComponents){
+                s=s+c.getQueryString()+" ";
+            }
+            s+="q="+text+"}";
+            return s;
+        }
+
+        else return text;
     }
 
     @Override
@@ -28,6 +46,14 @@ public class FulltextComponent extends Component {
         Object clone = super.clone();
         ((FulltextComponent) clone).id = maxID++;
         return clone;
+    }
+
+    public LinkedHashSet<BoostComponent> getBoostComponents() {
+        return boostComponents;
+    }
+
+    public void setBoostComponents(LinkedHashSet<BoostComponent> boostComponents) {
+        this.boostComponents = boostComponents;
     }
 
     /*

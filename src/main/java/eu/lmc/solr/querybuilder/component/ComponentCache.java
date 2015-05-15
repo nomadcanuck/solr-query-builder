@@ -1,6 +1,5 @@
 package eu.lmc.solr.querybuilder.component;
 
-import eu.lmc.solr.querybuilder.structure.Component;
 
 import java.util.ArrayList;
 
