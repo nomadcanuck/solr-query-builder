@@ -1,4 +1,5 @@
 import eu.lmc.solr.querybuilder.component.ComponentCache;
+import eu.lmc.solr.querybuilder.container.Container;
 import eu.lmc.solr.querybuilder.container.FilterContainer;
 import eu.lmc.solr.querybuilder.container.UserQuery;
 import org.junit.Before;
@@ -27,7 +28,7 @@ public class Gui {
 
         model = new DefaultListModel();
 
-        for (container.Container c : userQuery.getContainers()){
+        for (Container c : userQuery.getContainers()){
             model.addElement(c);
         }
 

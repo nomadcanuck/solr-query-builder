@@ -1,6 +1,5 @@
 package eu.lmc.solr.querybuilder.gui;
 
-import container.Container;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package eu.lmc.solr.querybuilder;
+package eu.lmc.solr.querybuilder.wicket;
 
 import eu.lmc.solr.querybuilder.container.UserQuery;
 import org.apache.wicket.protocol.http.WebSession;

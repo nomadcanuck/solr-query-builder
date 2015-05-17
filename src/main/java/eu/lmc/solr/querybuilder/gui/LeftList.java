@@ -1,21 +1,12 @@
 package eu.lmc.solr.querybuilder.gui;
 
-import component.Component;
-import component.ComponentCache;
-import container.FilterContainer;
-import container.UserQuery;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.FileSystemXmlApplicationContext;
-
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by avecherskaya on 09/05/15.
  */
 public class LeftList extends JPanel {
+    /*
 
     JList list;
     DefaultListModel<Component> model;
@@ -53,11 +44,11 @@ public class LeftList extends JPanel {
         filterContainer = (FilterContainer) applicationContext.getBean("filterContainer");
         //queryContainer = (QueryContainer) applicationContext.getBean("queryContainer");
 
-        /*
+
         System.out.println(componentCache.getCache().get(0).toString());
         SVLComponent idbrand = (SVLComponent) applicationContext.getBean("idbrand");
         System.out.println(idbrand.toString());
-        */
+
 
 
         JFrame frame = new JFrame("Lists");
@@ -95,5 +86,6 @@ public class LeftList extends JPanel {
 
 
     }
+*/
 
 }

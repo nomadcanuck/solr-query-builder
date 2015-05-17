@@ -1,4 +1,4 @@
-package eu.lmc.solr.querybuilder;
+package eu.lmc.solr.querybuilder.wicket;
 
 import eu.lmc.solr.querybuilder.component.ComponentCache;
 import org.apache.wicket.Page;
@@ -12,6 +12,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
  * Created by avecherskaya on 16/05/15.
  */
 public class SolrSearchApplication extends WebApplication {
+    //contains ArrayList<Component>
     private ComponentCache componentCache;
 
     @Override
@@ -19,7 +20,8 @@ public class SolrSearchApplication extends WebApplication {
         return Index.class;
     }
 
-    public void init(){
+    @Override
+    protected void init(){
         ApplicationContext applicationContext = new FileSystemXmlApplicationContext("mvc/web/WEB-INF/test-config.xml");
         componentCache = (ComponentCache) applicationContext.getBean("componentCache");
     }
@@ -27,6 +29,10 @@ public class SolrSearchApplication extends WebApplication {
     @Override
     public SolrSession newSession(Request request, Response response) {
         return new SolrSession(request);
+    }
+
+    public ComponentCache getComponentCache(){
+        return componentCache;
     }
 
 }
