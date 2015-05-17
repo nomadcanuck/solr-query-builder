@@ -35,4 +35,5 @@ public class SolrSearchApplication extends WebApplication {
         return componentCache;
     }
 
+
 }

@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:wicket="http://www.w3.org/1999/xhtml">
 <head lang="en">
+    <link rel="stylesheet" type="text/css" href="index-style.css">
     <meta charset="UTF-8">
     <title>Solr Search Engine</title>
 </head>
 <body>
-        <-- ComponentCache.class -->
-        <div float="right" width="200"></div>
 
-        <-- UserQuery.class -->
-        <div float="left" width="200"></div>
+    <!-- componentCache -->
+    <div wicket:id="componentCache" style="display: inline-block;" >
+        Content1<br>
+        <div wicket:id="componentCacheItem">item</div>
+    </div>
+
+    <!-- userQuery -->
+    <div wicket:id="userQuery" style="display: inline-block;">
+        Content2<br>
+        <div wicket:id="userQueryContainer">
+            <div wicket:id="queryItem">item</div>
+        </div>
+    </div>
 
 </body>
 </html>
